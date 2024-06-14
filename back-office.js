@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "POST",
       body: JSON.stringify(product),
       headers: {
+        "Content-Type": "application/json",
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjZiZmU4YjdjMjM5YzAwMTUyZjRiNmUiLCJpYXQiOjE3MTgzNTM1NDcsImV4cCI6MTcxOTU2MzE0N30.3rAIY1p1bhDYaK4zP5CwJwCFG2o7iwx8UJO7BVbKLaA",
       },
@@ -80,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "PUT",
       body: JSON.stringify(updatedProduct),
       headers: {
+        "Content-Type": "application/json",
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjZiZmU4YjdjMjM5YzAwMTUyZjRiNmUiLCJpYXQiOjE3MTgzNTM1NDcsImV4cCI6MTcxOTU2MzE0N30.3rAIY1p1bhDYaK4zP5CwJwCFG2o7iwx8UJO7BVbKLaA",
       },
@@ -102,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Si è verificato un errore durante l'aggiornamento del prodotto.");
       });
   }
+
   function deleteProduct(productId) {
     fetch(`https://striveschool-api.herokuapp.com/api/product/${productId}`, {
       method: "DELETE",
