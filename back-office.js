@@ -92,18 +92,16 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then((updatedProduct) => {
         console.log("Prodotto aggiornato", updatedProduct);
-
         localStorage.removeItem("editProduct");
         alert("Prodotto aggiornato con successo!");
         window.location.href = "home-page.html";
         form.reset();
       })
       .catch((error) => {
-        console.error("Errore nell'aggiornamento del prodotto", error);
+        console.log(error);
         alert("Si è verificato un errore durante l'aggiornamento del prodotto.");
       });
   }
-
   function deleteProduct(productId) {
     fetch(`https://striveschool-api.herokuapp.com/api/product/${productId}`, {
       method: "DELETE",
